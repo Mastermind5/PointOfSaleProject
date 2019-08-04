@@ -36,7 +36,7 @@ public class Condino_PointOfSales {
         break;
         
         case 2: 
-            System.out.println("lol");
+            
         
         break;
       
@@ -55,9 +55,9 @@ public class Condino_PointOfSales {
     }
     
     public static void WriteMcDoMenu(){
-        System.out.print("1-pc. Chicken Mcdo With Fries \n Php112.0 \n 1-pc  Scipy Chicken McDo w/ McSpaghetti "
-                +"\nPhp146.0 1-pc. Spicy Chicken McDo w/ Rice & Mushroom soup \n Php146.\n 1-pc. Chicken Mcdo w/ Spaghetti \n Php.144"
-                +"1-pc Chicken Mcdo w/ Rice & Mushroom Soup\n Php.144");
+        System.out.print("1-pc. Chicken Mcdo With Fries                                Php112.0 \n1-pc  Scipy Chicken McDo w/ McSpaghetti"
+                +"                      Php146.0\n1-pc. Spicy Chicken McDo w/ Rice & Mushroom Soup             Php146.0\n1-pc. Chicken Mcdo w/ Spaghetti                              Php144.0"
+                +"\n1-pc Chicken Mcdo w/ Rice & Mushroom Soup                    Php144.0");
     }
     }
     
