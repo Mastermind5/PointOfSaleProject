@@ -55,9 +55,9 @@ public class Condino_PointOfSales {
     }
     
     public static void WriteMcDoMenu(){
-        System.out.print("1-pc. Chicken Mcdo With Fries                                Php112.0 \n1-pc  Scipy Chicken McDo w/ McSpaghetti"
-                +"                      Php146.0\n1-pc. Spicy Chicken McDo w/ Rice & Mushroom Soup             Php146.0\n1-pc. Chicken Mcdo w/ Spaghetti                              Php144.0"
-                +"\n1-pc Chicken Mcdo w/ Rice & Mushroom Soup                    Php144.0");
+        System.out.println("1-pc. Chicken Mcdo With Fries \t\t\t\t Php112.0 \n1-pc  Scipy Chicken McDo w/ McSpaghetti"
+                +" \t\t Php146.0\n1-pc. Spicy Chicken McDo w/ Rice & Mushroom Soup \t Php146.0\n1-pc. Chicken Mcdo w/ Spaghetti \t\t\t Php144.0"
+                +"\n1-pc Chicken Mcdo w/ Rice & Mushroom Soup \t\t Php144.0");
     }
     }
     
