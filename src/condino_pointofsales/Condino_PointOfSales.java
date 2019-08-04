@@ -36,6 +36,7 @@ public class Condino_PointOfSales {
         break;
         
         case 2: 
+            System.out.println("lol");
         
         break;
       
