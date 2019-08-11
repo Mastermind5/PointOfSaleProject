@@ -9,6 +9,15 @@ package condino_pointofsales;
  *
  * @author bland
  */
-public class CreaterServer {
+public class ItemCombo extends MenuItem {
+    
+    ItemCombo(ItemCombo itemCombo){
+        
+    }
+    
+    ItemCombo(MenuItem menuItem, MenuItem menuItem2){
+        
+    }
+    
     
 }
