@@ -83,6 +83,7 @@ public class Condino_PointOfSales  {
         List.add(NewMenuItem);
         
     }
+  
     
     /////////////////////////////////////////////////////////
     // User response//
@@ -141,7 +142,7 @@ public class Condino_PointOfSales  {
                         System.out.println("Item Added");
                   break;
 
-              case 3://Removes Items to the List\
+              case 3://Removes Items to the List\ //Error with itemNumber
                   Scanner input = new Scanner (System.in);
                   
                   Boolean case3Loop = true;
@@ -167,9 +168,10 @@ public class Condino_PointOfSales  {
                    System.out.println("Remove item #"+removeItem.getItemNumber()+": "+"  "+removeItem.getItemName()+" with price "  + removeItem.getItemPrice() );
     
                    List.remove(removeItem.getItemNumber());// Removes item From List
-                   
-                   for(MenuItem yeet : List){ //Re Iterates the Menu
-                       yeet.getItemNumber();
+                   int i = 0 ;
+                   for(MenuItem reIterate : List){ //Re Iterates the Menu
+                        reIterate.setItemNumber(i);
+                        
                    }
                    
                   break;
@@ -210,9 +212,17 @@ public class Condino_PointOfSales  {
          
     }
     
-       
+    
+    public static void ReadList(){
     
     }
+    
+    public static void WriteList(){
+        
+    }
+    
+    
+}//End of Class
 
     
     
