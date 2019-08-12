@@ -5,6 +5,8 @@
  */
 package condino_pointofsales;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author bland
@@ -26,6 +28,19 @@ public class MenuItem {
          this.itemNumber = itemNumber;
          this.itemPrice = itemPrice;
      }
+     
+      public static MenuItem getItemFromList(ArrayList<MenuItem> List,int OrderNumber){
+            MenuItem item = new MenuItem();
+            
+                  for (MenuItem findItem: List) {
+               
+                       if(findItem.getItemNumber() == OrderNumber){
+                           item = findItem;
+                       }
+		}
+            
+            return item;
+        }
      
     /**
      * @return the itemNumber
