@@ -5,6 +5,14 @@
  */
 package condino_pointofsales;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.InputMismatchException;
@@ -21,17 +29,14 @@ public class Condino_PointOfSales  {
      * @param args the command line arguments
      */
     
-   
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
     Boolean MainLoop = true;
-    ArrayList<MenuItem> AvailableMenuList = new ArrayList<>();
-    
-    
    
-         
-     
-        
+    ArrayList<MenuItem> AvailableMenuList =  ReadList();
+   
+    
+    
       while(MainLoop){//Start Main Loop
     WriteMainMenu();
     System.out.print("Choice: ");
@@ -45,10 +50,6 @@ public class Condino_PointOfSales  {
        Order  order = new Order(AvailableMenuList);
        System.out.print("\n");
        WriteMcDoMenu(AvailableMenuList);
-       
-       
-       
-       
        
       
         break;
@@ -140,6 +141,10 @@ public class Condino_PointOfSales  {
                         
                         AddItemToList(List,new MenuItem(listLenght++,itemName,itemPrice));
                         System.out.println("Item Added");
+                        WriteList(List);
+                        
+                        
+                        
                   break;
 
               case 3://Removes Items to the List\ //Error with itemNumber
@@ -173,6 +178,7 @@ public class Condino_PointOfSales  {
                         reIterate.setItemNumber(i);
                         
                    }
+                      WriteList(List);
                    
                   break;
               case 4://Returns to Main Menu
@@ -213,12 +219,51 @@ public class Condino_PointOfSales  {
     }
     
     
-    public static void ReadList(){
+    public static ArrayList<MenuItem> ReadList() throws FileNotFoundException, IOException{
+        
+        ArrayList<MenuItem> CSVList = new ArrayList();
+        String FileName = "MenuList.csv";
+        File MenuListFile = new File(FileName);
+         String line = "",cvsSplitBy = ",";
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(MenuListFile));
+        String newLine;
+         while ((newLine = bufferedReader.readLine()) != null) {
+               String[] country = newLine.split(cvsSplitBy);
+               int orderNumber = Integer.parseInt(country[0]);
+               String Name = country[1];
+               double price = Double.parseDouble(country[2]);
+               
+               CSVList.add(new MenuItem(orderNumber,Name,price));
+                  }
+         
+         return CSVList;
     
     }
     
-    public static void WriteList(){
+    public static void WriteList(ArrayList<MenuItem> List){
         
+        String FileName = "MenuList.csv";
+        File MenuListFile = new File(FileName);
+            try{
+              
+                FileWriter fileWriter = new FileWriter(MenuListFile);
+                        
+  
+                BufferedWriter buffWriter = new BufferedWriter(fileWriter);
+                try (PrintWriter printWriter = new PrintWriter(buffWriter)) {
+                   
+                    
+                    for(MenuItem Item : List){
+                        printWriter.println(Item.getItemNumber()+", "+Item.getItemName()+", "+Item.getItemPrice());
+                    }
+                    printWriter.flush();
+                    printWriter.close(); 
+                }
+             
+            }catch(IOException e){
+             
+                System.out.println("WriteList Error: "+e);
+            }
     }
     
     
